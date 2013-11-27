@@ -25,7 +25,7 @@ class PinsController < ApplicationController
       else
         render action: 'new' 
       end
-  
+  end
 
 
   def update
@@ -39,9 +39,9 @@ class PinsController < ApplicationController
 
   def destroy
     @pin.destroy
-       redirect_to pins_url 
-    end
+    redirect_to pins_url
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -56,6 +56,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
